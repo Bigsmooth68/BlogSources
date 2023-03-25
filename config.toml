@@ -2,8 +2,7 @@ baseURL = 'https://bigsmooth68.github.io/'
 languageCode = 'en-us'
 title = 'Mon Blog'
 theme = "poison"
-
-
+paginate = 10
 
 [params]
     brand = "Olivier Spiesser"                      # name of your site - appears in the sidebar
