@@ -34,8 +34,8 @@ defaultContentLanguage = 'fr'
         # HasChildren:  If the directory's files should be listed.  Default is true.
         # Limit:        If the files should be listed, how many should be shown.
     menu = [
-        {Name = "Posts", URL = "/posts/", Pre = "Recent", HasChildren = true, Limit = 5},
-        {Name = "dbi Blogs", URL = "/dbi-blogs/", Pre = "Recent", HasChildren = true, Limit = 5},
+        {Name = "Posts", URL = "/posts/", HasChildren = true, Limit = 5},
+        {Name = "dbi Blogs", URL = "/dbi-blogs/", HasChildren = true, Limit = 5},
         {Name = "About", URL = "/about/", HasChildren = false},
     ]
 
