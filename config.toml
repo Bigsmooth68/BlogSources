@@ -1,13 +1,22 @@
 baseURL = 'https://bigsmooth68.github.io/'
-languageCode = 'en-us'
-title = 'Mon Blog'
+languageCode = 'fr'
+googleAnalytics = 'G-MHWFFCJS0T'
 theme = "poison"
 paginate = 10
+
+defaultContentLanguage = 'fr'
+[languages]
+  [languages.en]
+    title = 'My blog'
+    weight = 2
+  [languages.fr]
+    title = 'Mon blogue'
+    weight = 1
 
 [params]
     brand = "Olivier Spiesser"                      # name of your site - appears in the sidebar
     # brand_image = "/images/test.jpg"    # path to the image shown in the sidebar
-    description = "Le Blog d'Olivier" # Used as default meta description if not specified in front matter
+    description = "Le Blog" # Used as default meta description if not specified in front matter
     dark_mode = true                      # optional - defaults to false
     
     # NOTE: The following three params are optional and are used to create meta tags + enhance SEO.
@@ -26,6 +35,7 @@ paginate = 10
         # Limit:        If the files should be listed, how many should be shown.
     menu = [
         {Name = "Posts", URL = "/posts/", Pre = "Recent", HasChildren = true, Limit = 5},
+        {Name = "dbi Blogs", URL = "/dbi-blogs/", Pre = "Recent", HasChildren = true, Limit = 5},
         {Name = "About", URL = "/about/", HasChildren = false},
     ]
 

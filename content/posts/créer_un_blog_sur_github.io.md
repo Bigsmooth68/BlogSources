@@ -1,7 +1,7 @@
 ---
 title: "Créer un Blog sur github.io"
 date: 2023-03-25T16:55:39+01:00
-tags: ["Hugo","SSG"]
+tags: ["Hugo","SSG","Tutoriel"]
 ---
 
 Créer deux repo: BlogSources et Bigsmooth68.github.io. Activer github pages pour ce dernier.
