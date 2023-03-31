@@ -4,6 +4,8 @@ date: 2023-03-25T16:55:39+01:00
 tags: ["Hugo","SSG","Tutoriel"]
 ---
 
+Pour ce premier post, je vais expliquer comment j'ai mis en place ce blog sur gitpage.
+<!--more-->
 Créer deux repo: BlogSources et Bigsmooth68.github.io. Activer github pages pour ce dernier.
 
 Dans le répertoire de son choix, créer le nouveau site avec la commande hugo (le binaire d'hugo doit être installé au préalable avec, par exemple, chocolatey: `choco install hugo`).
