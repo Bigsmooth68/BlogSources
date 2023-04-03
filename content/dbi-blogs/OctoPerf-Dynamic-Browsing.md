@@ -1,6 +1,6 @@
 ---
-title: "OctoPerf Browsing Dynamique"
-date: 2023-03-20T12:48:03+02:00
-tags: ["OctoPerf","Test de Charge"]
-dbiblogtitle: "octoperf-dynamic-browsing"
+title: "OctoPerf Dynamic Browsing"
+date: 2023-03-20
+tags: [""]
+dbiblogtitle: octoperf-dynamic-browsing
 ---
