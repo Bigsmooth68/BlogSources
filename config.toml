@@ -26,7 +26,7 @@ defaultContentLanguage = 'fr'
         # Limit:        If the files should be listed, how many should be shown.
     menu = [
         {Name = "Posts", URL = "/posts/", HasChildren = true, Limit = 5},
-        {Name = "dbi Blogs", URL = "/dbi-blogs/", HasChildren = true, Limit = 5},
+        {Name = "dbi Blogs", URL = "/dbi-blogs/", HasChildren = false, Limit = 5},
         {Name = "About", URL = "/about/", HasChildren = false},
     ]
 
