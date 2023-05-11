@@ -1,6 +1,6 @@
-baseURL = 'https://bigsmooth68.github.io/'
-languageCode = 'fr'
-googleAnalytics = 'G-MHWFFCJS0T'
+baseURL = "https://bigsmooth68.github.io/"
+languageCode = "fr"
+googleAnalytics = "G-MHWFFCJS0T"
 theme = "poison"
 paginate = 10
 
