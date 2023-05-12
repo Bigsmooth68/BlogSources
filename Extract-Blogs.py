@@ -31,8 +31,10 @@ def getBlogs(url,destination):
 					title = link.h2.string.strip()
 					sanitized_title = lk.replace(root_url,'').replace('/','')
 					infos = (link.find('div',class_='infos')).text
-					pubDate = next(datefinder.find_dates(infos))
-					pubDateStr = str(pubDate)
+					publishedDateStr = infos.split(' ')[0]
+					publishedDateArray = publishedDateStr.split('.')
+					publishedDate = f'{publishedDateArray[2]}-{publishedDateArray[1]}-{publishedDateArray[0]}'
+					pubDateStr = str(publishedDate)
 					pubDateStr = pubDateStr.split()[0]
 
 					path = Path( destination + sanitized_title + '.md')
