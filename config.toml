@@ -1,19 +1,17 @@
 baseURL = "https://bigsmooth68.github.io/"
-languageCode = "fr"
+languageCode = "en"
 googleAnalytics = "G-MHWFFCJS0T"
 theme = "poison"
 paginate = 10
 
-defaultContentLanguage = 'fr'
+defaultContentLanguage = 'en'
 [languages]
   [languages.en]
     title = 'My blog'
     weight = 2
-  [languages.fr]
-    title = 'Mon blogue'
-    weight = 1
 
 [params]
+    mainSections = ['posts']
     brand = "Olivier Spiesser"                      # name of your site - appears in the sidebar
     description = "Le Blog" # Used as default meta description if not specified in front matter
     dark_mode = true                      # optional - defaults to false
@@ -77,5 +75,11 @@ defaultContentLanguage = 'fr'
     code_background_color_dark = "#393D47"  # default is #393D47
 
 [taxonomies]
-    series = 'series'
     tags = 'tags'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xhtml = false
