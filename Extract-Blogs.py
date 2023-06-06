@@ -49,8 +49,8 @@ def getBlogs(url,destination):
 						path.write_text(buildStr)
 						print(f'{sanitized_title} {Fore.GREEN}written{Fore.RESET}.')
 					else:
-						return 0
 						print(f'{sanitized_title} {Fore.RED}ignored{Fore.RESET}.')
+						return 0
 				
 		currentPage += 1
 
