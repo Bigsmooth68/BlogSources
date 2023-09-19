@@ -1,7 +1,8 @@
-import requests, datefinder, re
+import requests, os
 from pathlib import Path
 from bs4 import BeautifulSoup
 from colorama import Fore, Style
+from git import Repo
 
 root_url = 'https://www.dbi-services.com/blog/'
 author_url = root_url + 'author/ols/'
@@ -9,6 +10,7 @@ dest_path = 'content\dbi-blogs\\'
 
 def getBlogs(url,destination):
 	currentPage = 1
+	blogsCount = 0
 
 	m = []
 	nextpage = True
@@ -48,11 +50,13 @@ def getBlogs(url,destination):
 						buildStr += '---'
 						path.write_text(buildStr)
 						print(f'{sanitized_title} {Fore.GREEN}written{Fore.RESET}.')
+						blogsCount += 1
 					else:
 						print(f'{sanitized_title} {Fore.RED}ignored{Fore.RESET}.')
 						return 0
 				
 		currentPage += 1
+	return blogsCount
 
 #########
 
@@ -63,6 +67,21 @@ if __name__ == "__main__":
 		print('Destination path: ' + dest_path)
 		page_url = author_url + 'page/'
 		#print(page_url)
-		getBlogs(page_url,dest_path)
+		newBlogsCount = getBlogs(page_url,dest_path)
 	else:
 		print(f'Path {dest_path} does not exist!')
+
+print(f'{newBlogsCount} new blog(s) found.')
+
+# newBlogsCount = 1 ## fake
+if (newBlogsCount > 0):
+	print('Calling hugo: ', end='')
+	stream = os.popen('hugo')
+	hugoOutput = stream.read()
+	print(Fore.GREEN + 'OK' + Style.RESET_ALL)
+
+	# Add files to git
+	# print('Initiating git repo object')
+	# repo = Repo('.')
+	# print('Add files to repo')
+	# repo.index.add('.')
