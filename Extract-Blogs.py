@@ -53,7 +53,7 @@ def getBlogs(url,destination):
 						blogsCount += 1
 					else:
 						print(f'{sanitized_title} {Fore.RED}ignored{Fore.RESET}.')
-						return 0
+						return blogsCount
 				
 		currentPage += 1
 	return blogsCount
