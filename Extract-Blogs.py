@@ -21,7 +21,7 @@ def getBlogs(url,destination):
 		if response.status_code == 404:
 			print(f'\n {currentPage-1} pages processed.')
 			return 0
-		print(f'\n Processing page {currentPage}')
+		print(f'\nProcessing page {currentPage}')
 		html_text = response.text
 		soup = BeautifulSoup(html_text,'html.parser')
 
@@ -75,7 +75,7 @@ print(f'{newBlogsCount} new blog(s) found.')
 
 # newBlogsCount = 1 ## fake
 if (newBlogsCount > 0):
-	print('Calling hugo: ', end='')
+	print('Calling hugo: ', end='', flush=True)
 	stream = os.popen('hugo')
 	hugoOutput = stream.read()
 	print(Fore.GREEN + 'OK' + Style.RESET_ALL)
