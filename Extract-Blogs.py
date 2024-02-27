@@ -2,7 +2,7 @@ import requests, os
 from pathlib import Path
 from bs4 import BeautifulSoup
 from colorama import Fore, Style
-from git import Repo
+#from git import Repo
 
 root_url = 'https://www.dbi-services.com/blog/'
 author_url = root_url + 'author/ols/'
@@ -84,4 +84,4 @@ if (newBlogsCount > 0):
 	# print('Initiating git repo object')
 	# repo = Repo('.')
 	# print('Add files to repo')
-	# repo.index.add('.')
+	# repo.index.add('content')
