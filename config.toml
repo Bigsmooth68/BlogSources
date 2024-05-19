@@ -1,85 +1,25 @@
 baseURL = "https://bigsmooth68.github.io/"
+name = "bigsmooth68.github.io"
+author = "Olivier Spiesser"
+theme = "paper"
+paginate = 7
 languageCode = "en"
-googleAnalytics = "G-MHWFFCJS0T"
-theme = "poison"
-paginate = 10
-
-defaultContentLanguage = 'en'
-[languages]
-  [languages.en]
-    title = 'My blog'
-    weight = 2
+DefaultContentLanguage = "en"
 
 [params]
-    mainSections = ['posts']
-    brand = "Olivier Spiesser"                      # name of your site - appears in the sidebar
-    description = "Le Blog" # Used as default meta description if not specified in front matter
-    dark_mode = true                      # optional - defaults to false
+  github = 'bigsmooth68'
+  linkedin = 'olivierspiesser'
+  name = 'Olivier Spiesser'
+  bio = 'My blogs posted on dbi services blogs site'
 
-    # MENU PLACEHOLDER
-    # Menu dict keys:
-        # Name:         The name to display on the menu.
-        # URL:          The directory relative to the content directory.
-        # HasChildren:  If the directory's files should be listed.  Default is true.
-        # Limit:        If the files should be listed, how many should be shown.
-    menu = [
-        {Name = "Posts", URL = "/posts/", HasChildren = true, Limit = 5},
-        {Name = "dbi Blogs", URL = "/dbi-blogs/", HasChildren = false, Limit = 5},
-        {Name = "About", URL = "/about/", HasChildren = false},
-    ]
-
-    # Links to your socials.  Comment or delete any you don't need/use. 
-    github_url = "https://github.com/Bigsmooth68"
-    gitlab_url = "https://gitlab.com/olivier.spiesser"
-    linkedin_url = "https://linkedin.com/olivierspiesser/"
-    youtube_url = "https://youtube.com/channel/UCftqGcZ0CJ2Er106b-xWTkg"
-
-    # NOTE: If you don't want to use RSS, comment or delete the following lines
-    # Adds an RSS icon to the end of the socials which links to {{ .Site.BaseURL }}/index.xml
-    rss_icon = true
-    # Which section the RSS icon links to, defaults to all content. See https://gohugo.io/templates/rss/#section-rss
-    rss_section = "posts"
-
-    # Hex colors for your sidebar.
-    sidebar_bg_color = "#202020"            # default is #202020
-    sidebar_img_border_color = "#515151"    # default is #515151
-    sidebar_p_color = "#909090"             # default is #909090
-    sidebar_h1_color = "#FFF"               # default is #FFF
-    sidebar_a_color = "#FFF"                # default is #FFF
-    sidebar_socials_color = "#FFF"          # default is #FFF
-    moon_sun_color = "#FFF"                 # default is #FFF
-    moon_sun_background_color = "#515151"   # default is #515151
-
-    # Hex colors for your content in light mode.
-    text_color = "#222"             # default is #222
-    content_bg_color = "#FAF9F6"    # default is #FAF9F6
-    post_title_color = "#303030"    # default is #303030
-    list_color = "#5a5a5a"          # default is #5a5a5a
-    link_color = "#268bd2"          # default is #268bd2
-    date_color = "#515151"          # default is #515151
-    table_border_color = "#E5E5E5"  # default is #E5E5E5
-    table_stripe_color = "#F9F9F9"  # default is #F9F9F9
-
-    # Hex colors for your content in dark mode
-    text_color_dark = "#eee"                # default is #eee
-    content_bg_color_dark = "#121212"       # default is #121212
-    post_title_color_dark = "#DBE2E9"       # default is #DBE2E9
-    list_color_dark = "#9d9d9d"             # default is #9d9d9d
-    link_color_dark = "#268bd2"             # default is #268bd2
-    date_color_dark = "#9a9a9a"             # default is #9a9a9a
-    table_border_color_dark = "#515151"     # default is #515151
-    table_stripe_color_dark = "#202020"     # default is #202020
-    code_color = "#bf616a"                  # default is #bf616a
-    code_background_color = "#E5E5E5"       # default is #E5E5E5
-    code_color_dark = "#ff7f7f"             # default is #ff7f7f
-    code_background_color_dark = "#393D47"  # default is #393D47
-
-[taxonomies]
-    tags = 'tags'
-
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      hardWraps = false
-      unsafe = true
-      xhtml = false
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 10
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 10

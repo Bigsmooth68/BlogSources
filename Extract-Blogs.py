@@ -1,18 +1,24 @@
 import requests, os
-from pathlib import Path
 from bs4 import BeautifulSoup
 from colorama import Fore, Style
 #from git import Repo
 
 root_url = 'https://www.dbi-services.com/blog/'
 author_url = root_url + 'author/ols/'
-dest_path = 'content\dbi-blogs\\'
+dest_path = 'content/posts/'
+
+def determineTags(title):
+	tagsList = ['kafka','zabbix','monitoring','dynatrace','ansible']
+	tags = []
+	for t in tagsList:
+		if t in title:
+			tags.append(t)
+	return tags
 
 def getBlogs(url,destination):
 	currentPage = 1
 	blogsCount = 0
 
-	m = []
 	nextpage = True
 	while nextpage:
 		
@@ -25,35 +31,53 @@ def getBlogs(url,destination):
 		html_text = response.text
 		soup = BeautifulSoup(html_text,'html.parser')
 
-		for link in soup.find_all('a',href=True,):
-			lk = link.get('href')
-			lkClass = link.get('class')
-			if 'https://www.dbi-services.com/blog/' in lk:
-				if 'text-decoration-none' in lkClass:
-					title = link.h2.string.strip()
-					sanitized_title = lk.replace(root_url,'').replace('/','')
-					infos = (link.find('div',class_='infos')).text
-					publishedDateStr = infos.split(' ')[0]
-					publishedDateArray = publishedDateStr.split('.')
-					publishedDate = f'{publishedDateArray[2]}-{publishedDateArray[1]}-{publishedDateArray[0]}'
-					pubDateStr = str(publishedDate)
-					pubDateStr = pubDateStr.split()[0]
+		link = ''
+		for article in soup.find_all('article'):
+			# print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+			# print(article)
+			# print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+			
+			title = article.h2.text.strip()
+			
+			summary = article.p.text
+			
+			# link = article.find_all('a')[1]['href']
+			link = article.h2.parent.attrs['href'] 
 
-					path = Path( destination + sanitized_title + '.md')
-					
-					if not (path.is_file()):
-						buildStr = '---\n'
-						buildStr += f'title: "{ title }"\n'
-						buildStr += f'date: { pubDateStr }\n'
-						buildStr += 'tags: [""]\n'
-						buildStr += f'dbiblogtitle: { sanitized_title }\n'
-						buildStr += '---'
-						path.write_text(buildStr)
-						print(f'{sanitized_title} {Fore.GREEN}written{Fore.RESET}.')
-						blogsCount += 1
-					else:
-						print(f'{sanitized_title} {Fore.RED}ignored{Fore.RESET}.')
-						return blogsCount
+			sanitized_title = link.replace(root_url,'').replace('/','')
+
+			tags = determineTags(sanitized_title)
+
+			publishedDateStr = article.find('div',class_='infos').text.split(' ')[0]
+			publishedDateArray = publishedDateStr.split('.')
+			publishedDate = f'{publishedDateArray[2]}-{publishedDateArray[1]}-{publishedDateArray[0]}'
+			pubDateStr = str(publishedDate)
+			pubDateStr = pubDateStr.split()[0]
+
+			# print(f"xxxxxxxxxx\nTITLE: {title}\nSUMMARY: {summary}\nxxxxxxxxxx\nLink: {link}\nxxxxxxxxx\n")
+			# print(f"pubDate:{publishedDate}")
+			# print('----------------------------------------------------')
+
+			buildStr = '---\n'
+			buildStr += f'title: "{ title }"\n'
+			buildStr += f'date: { pubDateStr }\n'
+			buildStr += f'tags: {tags}\n'
+			buildStr += f'dbiblogtitle: { sanitized_title }\n'
+			buildStr += '---\n'
+			buildStr += summary
+
+			if 'category' in sanitized_title:
+				print(link)
+				exit(0)
+
+			with open(destination + sanitized_title + '.md', "w", encoding='utf-8') as fp:
+				fp.write(buildStr)
+			# try:
+			# 	path.write_text(buildStr)
+			# except:
+			# 	print(buildStr)
+			# 	exit(1)
+			print(f'{sanitized_title} {Fore.GREEN}written{Fore.RESET}.')
 				
 		currentPage += 1
 	return blogsCount
