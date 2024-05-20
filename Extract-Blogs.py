@@ -59,7 +59,8 @@ def getBlogs(url,destination):
 			buildStr += f'title: "{ title }"\n'
 			buildStr += f'date: { pubDateStr }\n'
 			buildStr += f'tags: {tags}\n'
-			buildStr += f'dbiblogtitle: { sanitized_title }\n'
+			# buildStr += f'params:\n'
+			# buildStr += f'  dbiblogtitle: { sanitized_title }\n'
 			buildStr += '---\n'
 			buildStr += summary
 

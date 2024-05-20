@@ -23,6 +23,9 @@
 
   <!-- Post Tags -->
   {{ if .Params.tags }}
+    {{ if in .Params.tags "dbi-services" }}
+      <a href="https://www.dbi-services.com/blog/{{ .File.BaseFileName }}/" target="_blank">more</a> on dbi-services.
+    {{ end }}
   <footer class="mt-12 flex flex-wrap">
     {{ range .Params.tags }} {{ $href := print (absURL "tags/") (urlize .) }}
     <a
