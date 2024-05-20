@@ -1,7 +1,7 @@
 ---
 title: "Zabbix Automatic Item Creation"
 date: 2023-06-20
-tags: ['zabbix']
+tags: ['dbi-services', 'zabbix']
 dbiblogtitle: zabbix-automatic-item-creation
 ---
 In my previous Zabbix blog post, I wanted to monitor JVM garbage collection metrics. As there are 17 items to create, I looked for a way to automatically create them. I found it 🙂 . In(…)

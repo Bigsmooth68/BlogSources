@@ -9,7 +9,7 @@ dest_path = 'content/posts/'
 
 def determineTags(title):
 	tagsList = ['kafka','zabbix','monitoring','dynatrace','ansible']
-	tags = []
+	tags = ['dbi-services']
 	for t in tagsList:
 		if t in title:
 			tags.append(t)
@@ -72,6 +72,7 @@ def getBlogs(url,destination):
 
 			with open(destination + sanitized_title + '.md', "w", encoding='utf-8') as fp:
 				fp.write(buildStr)
+				blogsCount += 1
 			# try:
 			# 	path.write_text(buildStr)
 			# except:
