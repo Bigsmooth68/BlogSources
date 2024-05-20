@@ -22,3 +22,7 @@ DefaultContentLanguage = "en"
 
 [markup.goldmark.renderer]
 unsafe = true
+
+[services]
+  [services.googleAnalytics]
+    ID = 'G-MHWFFCJS0T'
