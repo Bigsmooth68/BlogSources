@@ -1,6 +1,7 @@
 ---
 title: "Cities I've visited"
 date: 2023-05-14T15:38:04+02:00
+weight: 10
 ---
 Below is a map showing cities I have visited:
 
