@@ -1,5 +1,6 @@
 baseURL = "https://bigsmooth68.github.io/"
 name = "bigsmooth68.github.io"
+title = "bigsmooth68.github.io"
 author = "Olivier Spiesser"
 theme = "paper"
 paginate = 7

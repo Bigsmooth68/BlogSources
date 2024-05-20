@@ -54,10 +54,7 @@ def getBlogs(url,destination):
 			pubDateStr = str(publishedDate)
 			pubDateStr = pubDateStr.split()[0]
 
-			# print(f"xxxxxxxxxx\nTITLE: {title}\nSUMMARY: {summary}\nxxxxxxxxxx\nLink: {link}\nxxxxxxxxx\n")
-			# print(f"pubDate:{publishedDate}")
-			# print('----------------------------------------------------')
-
+			# Prepare string to write in file
 			buildStr = '---\n'
 			buildStr += f'title: "{ title }"\n'
 			buildStr += f'date: { pubDateStr }\n'
@@ -65,10 +62,6 @@ def getBlogs(url,destination):
 			buildStr += f'dbiblogtitle: { sanitized_title }\n'
 			buildStr += '---\n'
 			buildStr += summary
-
-			if 'category' in sanitized_title:
-				print(link)
-				exit(0)
 
 			with open(destination + sanitized_title + '.md', "w", encoding='utf-8') as fp:
 				fp.write(buildStr)
