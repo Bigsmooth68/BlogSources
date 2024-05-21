@@ -26,3 +26,8 @@ unsafe = true
 [services]
   [services.googleAnalytics]
     ID = 'G-MHWFFCJS0T'
+
+[privacy]
+  [privacy.googleAnalytics]
+    disable = false
+    respectDoNotTrack = true
