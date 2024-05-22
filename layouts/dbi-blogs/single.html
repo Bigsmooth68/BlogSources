@@ -1,8 +1,0 @@
-{{ define "main" -}}
-<div class="post">
-  {{ partial "post/info.html" . }}
-  {{ .Content }}
-  Cliquer sur le <a href='https://www.dbi-services.com/blog/{{ .Params.dbiblogtitle }}' target="_blank" rel="noopener noreferrer">lien</a> pour lire la suite sur le blog dbi services.
-  {{ partial "post/navigation.html" . }}
-</div>
-{{- end }}
