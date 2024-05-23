@@ -31,3 +31,13 @@ unsafe = true
   [privacy.googleAnalytics]
     disable = false
     respectDoNotTrack = true
+
+# config.toml
+
+# Enable taxonomies
+[taxonomies]
+  tag = "tags"
+
+# URL structure for taxonomy term pages
+[permalinkBaseName]
+  tag = "/tags"
