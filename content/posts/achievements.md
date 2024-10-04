@@ -5,7 +5,7 @@ author: "Olivier Spiesser"
 language: "en"
 ---
 
-During my last 7 years of work, I did:
+During my last 7 years of work, I:
 - Wrote 78 blogs (which you can link in this blog)
-- Present at 4 dbi xChange
-- Pass 11 certifications
+- Presented at 4 dbi xChange
+- Passed 11 certifications
